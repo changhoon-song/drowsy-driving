@@ -1,0 +1,105 @@
+<!-- yolo.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOLOv8 Video Feed</title>
+    <style>
+        body {
+            background: url('https://image.samsungsds.com/kr/insights/__icsFiles/afieldfile/2023/07/12/2.jpg?queryString=20231030024258') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 80px;
+            margin-top: 20px;
+        }
+
+        #yolo-video-feed {
+            border: 1px solid #000;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+        }
+
+        #download_button {
+            margin-top: 20px;
+            font-size: 20px;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn {
+            border: none;
+            display: block;
+            text-align: center;
+            cursor: pointer;
+            text-transform: uppercase;
+            outline: none;
+            overflow: hidden;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 15px;
+            background-color: #222;
+            padding: 17px 60px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.20);
+        }
+
+        .btn span {
+            position: relative; 
+            z-index: 1;
+        }
+
+        .btn:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 490%;
+            width: 140%;
+            background: #78c7d2;
+            transition: all .5s ease-in-out;
+            transform: translateX(-98%) translateY(-25%) rotate(45deg);
+        }
+
+        .btn:hover:after {
+            transform: translateX(-9%) translateY(-25%) rotate(45deg);
+        }
+        a{
+            color:white;
+            text-decoration: none; 
+
+        }
+    </style>
+</head>
+<body>
+    <h1>YOLOv8 Model</h1>
+    <img id="yolo-video-feed">
+    <button class="btn"><span><a href="/one_page">Previous</a></span></button>
+
+    <script>
+        var video = document.getElementById('yolo-video-feed');
+        video.src = "{{ url_for('yolo_video_feed') }}";
+
+        setInterval(function(){
+            video.src = "{{ url_for('yolo_video_feed') }}?" + new Date().getTime();
+        }, 1000);
+    </script>
+</body>
+</html>

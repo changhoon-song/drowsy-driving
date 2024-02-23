@@ -1,0 +1,44 @@
+<!-- download_page.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Excel</title>
+    <style>
+        body {
+            background: url('https://assets-global.website-files.com/63d04d4b1b2834390e504ddf/64f8e5421c1629c792309d26_Artboard%2013-tiny%20copy.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 80px;
+            margin-top: 20px;
+        }
+
+        #download_button {
+            margin-top: 20px;
+            font-size: 20px;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Download Excel</h1>
+    <p>Click the link below to download the Excel file:</p>
+    <!-- '/download_excel' 엔드포인트로 이동하는 버튼 -->
+    <a id="download_button" href="{{ url_for('download_excel') }}" download="event_data.xlsx">Download Excel</a>
+</body>
+</html>

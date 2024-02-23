@@ -1,0 +1,127 @@
+<!-- main.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <style>
+         body {
+            background: url('https://d9s1543upwp3n.cloudfront.net/wp-content/uploads/2023/04/AI-generated-car-design-2048x1365.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+
+
+
+        :root {
+  --bg: #3C465C;
+  --primary: #78FFCD;
+  --solid: #fff;
+  --btn-w: 18em;
+  --dot-w: calc(var(--btn-w)*.2);
+  --tr-X: calc(var(--btn-w) - var(--dot-w));
+  --btn-bottom-margin: 2em;
+}
+* {box-sizing: border-box;}
+*:before, *:after {box-sizing: border-box;}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap;
+  font-size: 20px;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.btn {
+  
+  margin: 0 auto;
+  width: var(--btn-w);
+  color: var(--primary);
+  border: .15em solid var(--primary);
+  border-radius: 5em;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.3em;
+  line-height: 2em;
+  cursor: pointer;  
+  position: absolute;
+  bottom: var(--btn-bottom-margin);
+  left: 50%; /* 가운데 정렬을 위해 왼쪽 여백을 50%로 설정 */
+  transform: translateX(-50%);
+}
+
+
+.dot {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: var(--dot-w);
+  height: 100%;
+  border-radius: 100%;
+  transition: all 300ms ease;
+  display: none;
+}
+.dot:after {
+  content: '';
+  position: absolute;
+  left: calc(50% - .4em);
+  top: -.4em;
+  height: .8em;
+  width: .8em;
+  border-radius: 1em;
+  border: .25em solid var(--solid);
+  box-shadow: 0 0 .7em var(--solid),
+        0 0 2em var(--primary);
+}
+.btn:hover .dot,
+.btn:focus .dot {
+  animation: atom 2s infinite linear;
+  display: block;
+}
+@keyframes atom {
+  0% {transform: translateX(0) rotate(0);}
+  30%{transform: translateX(var(--tr-X)) rotate(0);}
+  50% {transform: translateX(var(--tr-X)) rotate(180deg);}
+  80% {transform: translateX(0) rotate(180deg);}
+  100% {transform: translateX(0) rotate(360deg);}
+}
+
+
+
+
+a {
+    color: white;
+    text-decoration: none; /* 밑줄 제거 */
+    font-size: 1.5em; /* 원하는 크기로 조절 */
+}
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container"> 
+        <div class="btn">
+          <span> <a href="/first_page">EUN & WON & HOON PROJECT</a></span>
+          <div class="dot"></div>
+        </div>
+
+      </div>
+    
+    
+</body>
+</html>
