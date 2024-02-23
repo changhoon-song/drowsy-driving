@@ -1,0 +1,7 @@
+train: /content/train/images
+val: /content/valid/images
+test: /content/test/images
+
+# classes
+nc: 17
+names: [ 'dog', 'person', 'cat', 'tv', 'car', 'meatballs', 'marinara sauce', 'tomato soup', 'chicken noodel soup', 'french onion soup', 'chicken breast', 'ribs', 'pulled pork', 'hamburger', 'cavit', 'awake', 'drowsy']
